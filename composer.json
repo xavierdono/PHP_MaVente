@@ -1,0 +1,12 @@
+{
+    "name": "vendor/htdocs",
+    "description": "Description of project htdocs.",
+    "authors": [
+        {
+            "name": "Jarod"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "1.1.0"
+    }
+}
