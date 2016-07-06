@@ -14,7 +14,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT manu_id, manu_name FROM manufacturers";
+        $query = "SELECT manu_id, manu_name FROM manufacturers ORDER BY manu_name";
         $results = $db->query($query);
 
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
@@ -34,7 +34,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT cat_id, cat_name_en, cat_name_fr FROM categories";
+        $query = "SELECT cat_id, cat_name_en, cat_name_fr FROM categories ORDER BY cat_name_en";
         $results = $db->query($query);
 
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
