@@ -1,33 +1,36 @@
 [
     {
         "name": "fzaninotto/faker",
-        "version": "v1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "v1.6.0",
+        "version_normalized": "1.6.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/fzaninotto/Faker.git",
-            "reference": "3bf14b6cb8b98be3a3a3f9fed66ecb2517bf87ac"
+            "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/3bf14b6cb8b98be3a3a3f9fed66ecb2517bf87ac",
-            "reference": "3bf14b6cb8b98be3a3a3f9fed66ecb2517bf87ac",
+            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+            "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": "^5.3.3|^7.0"
         },
-        "time": "2012-10-29 09:32:06",
+        "require-dev": {
+            "ext-intl": "*",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~1.5"
+        },
+        "time": "2016-04-29 12:21:54",
         "type": "library",
         "extra": {
-            "branch-alias": {
-                "dev-master": "1.1.x-dev"
-            }
+            "branch-alias": []
         },
         "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Faker": "src/"
+            "psr-4": {
+                "Faker\\": "src/Faker/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",

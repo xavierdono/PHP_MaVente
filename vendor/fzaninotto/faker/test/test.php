@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__ . '/../src/autoload.php';
-
+require __DIR__ .'/../vendor/autoload.php';
 $faker = Faker\Factory::create();
 $faker->seed(5);
+
+echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
-<?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>" >
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
     <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
@@ -29,7 +29,7 @@ $faker->seed(5);
 <?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $faker->text(400) ?> 
+<?php echo $faker->text(400) ?>
 ]]>
     </details>
 <?php endif; ?>
