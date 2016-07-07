@@ -12,11 +12,11 @@
     <body>
         <div id="main_container">
             <?php
-            include_once './templates/header.php';
+            include_once './header/header.php';
             ?>
             <div id="main_content">
                 <?php
-                include_once './templates/menu_bar.php';
+                include_once './menu/menu_bar.php';
                 ?>
                 <br />
                 <div class="left_content">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <?php
-            include_once './templates/footer.php';
+            include_once './footer/footer.php';
             ?>
         </div>
     </body>
