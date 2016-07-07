@@ -107,7 +107,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = " . $id;
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = " . intval($id);
         $results = $db->query($query);
 
         $row = $results->fetchArray(SQLITE3_ASSOC);
