@@ -1,18 +1,24 @@
 <?php
+
+session_start();
+
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)) . DS);
-
-echo ROOT;
 
 require_once ROOT . 'Autoloader.php';
 Autoloader::register();
 
-session_start();
-
 if (isset($_GET['lang'])) {
     $lang = $_GET['lang'];
+
+    $_SESSION['lang'] = $lang;
 } else {
-    $lang = 'fr';
+
+    if(isset($_SESSION['lang'])) {
+         $lang = $_SESSION['lang'];
+    } else {
+        $lang = 'fr';
+    }
 }
 ?>
 

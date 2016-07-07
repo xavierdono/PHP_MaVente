@@ -1,6 +1,6 @@
 <?php
 
-$manufacturers = App\tables\Base::getAllManufactures();
+$manufacturers = App\Tables\Base::getAllManufactures();
 
 $mod = 2;
 
