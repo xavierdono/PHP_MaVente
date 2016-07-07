@@ -10,7 +10,7 @@ $categories = App\tables\Base::getAllCategories();
 $items = App\tables\Base::getAllItems();
 ?>
 <html>
-    <head>       
+    <head>
         <meta charset="UTF-8">
         <title>DB</title></head>
     <body>
@@ -31,8 +31,8 @@ $items = App\tables\Base::getAllItems();
             foreach ($categories as $categorie) {
                 echo '<tr>';
                 echo '<td>' . $categorie->getId() . '</td>';
-                echo '<td>' . $categorie->getName_en() . '</td>';
-                echo '<td>' . $categorie->getName_fr() . '</td>';
+                echo '<td>' . $categorie->getName('fr') . '</td>';
+                echo '<td>' . $categorie->getName('en') . '</td>';
                 echo '</tr>';
             }
             ?>
@@ -43,13 +43,19 @@ $items = App\tables\Base::getAllItems();
             foreach ($items as $item) {
                 echo '<tr>';
                 echo '<td>' . $item->getId() . '</td>';
-                echo '<td>' . $item->getName_en() . '</td>';
-                echo '<td>' . $item->getName_fr() . '</td>';
-                echo '<td>' . $item->getDesc_en() . '</td>';
-                echo '<td>' . $item->getDesc_fr() . '</td>';
+                echo '<td>' . $item->getName('fr') . '</td>';
+                echo '<td>' . $item->getName('en') . '</td>';
+                echo '<td>' . $item->getDesc('fr') . '</td>';
+                echo '<td>' . $item->getDesc('en') . '</td>';
                 echo '<td>' . $item->getEan() . '</td>';
                 echo '<td>' . $item->getManu_id() . '</td>';
                 echo '<td>' . $item->getCat_id() . '</td>';
+                echo '<td>' . $item->getStaId() . '</td>';
+                echo '<td>' . $item->getWarId() . '</td>';
+                echo '<td>' . $item->getTrsId() . '</td>';
+                echo '<td>' . $item->getIncId() . '</td>';
+                echo '<td>' . $item->getDiscount() . '</td>';
+                echo '<td>' . $item->getPrice() . '</td>';
                 echo '</tr>';
             }
             ?>

@@ -55,7 +55,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items";
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id, fk_sta_id, fk_war_id, fk_trs_id, fk_inc_id, items_discount, items_price FROM items";
         $results = $db->query($query);
 
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
@@ -68,6 +68,12 @@ class Base {
             $item->setEan($row['items_ean']);
             $item->setManu_id($row['fk_manu_id']);
             $item->setCat_id($row['fk_cat_id']);
+            $item->setStaId($row['fk_sta_id']);
+            $item->setWarId($row['fk_war_id']);
+            $item->setTrsId($row['fk_trs_id']);
+            $item->setIncId($row['fk_inc_id']);
+            $item->setDiscount($row['items_discount']);
+            $item->setPrice($row['items_price']);
             $items [] = $item;
         }
 
@@ -81,7 +87,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = 0";
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id, fk_sta_id, fk_war_id, fk_trs_id, fk_inc_id, items_discount, items_price  FROM items WHERE items_id = 0";
         $results = $db->query($query);
 
         $row = $results->fetchArray(SQLITE3_ASSOC);
@@ -95,6 +101,12 @@ class Base {
             $item->setEan($row['items_ean']);
             $item->setManu_id($row['fk_manu_id']);
             $item->setCat_id($row['fk_cat_id']);
+            $item->setStaId($row['fk_sta_id']);
+            $item->setWarId($row['fk_war_id']);
+            $item->setTrsId($row['fk_trs_id']);
+            $item->setIncId($row['fk_inc_id']);
+            $item->setDiscount($row['items_discount']);
+            $item->setPrice($row['items_price']);
         }
 
         $db->close();
@@ -107,7 +119,7 @@ class Base {
 
         $db = new DBConnection();
 
-        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = " . intval($id);
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id, fk_sta_id, fk_war_id, fk_trs_id, fk_inc_id, items_discount, items_price FROM items WHERE items_id = " . intval($id);
         $results = $db->query($query);
 
         $row = $results->fetchArray(SQLITE3_ASSOC);
@@ -121,6 +133,12 @@ class Base {
             $item->setEan($row['items_ean']);
             $item->setManu_id($row['fk_manu_id']);
             $item->setCat_id($row['fk_cat_id']);
+            $item->setStaId($row['fk_sta_id']);
+            $item->setWarId($row['fk_war_id']);
+            $item->setTrsId($row['fk_trs_id']);
+            $item->setIncId($row['fk_inc_id']);
+            $item->setDiscount($row['items_discount']);
+            $item->setPrice($row['items_price']);
         }
 
         $db->close();

@@ -12,6 +12,60 @@ class Item {
     private $ean;
     private $manu_id;
     private $cat_id;
+    private $sta_id;
+    private $war_id;
+    private $trs_id;
+    private $inc_id;
+    private $discount;
+    private $price;
+
+    function getStaId() {
+        return $this->sta_id;
+    }
+
+    function setStaId($sta_id) {
+        $this->sta_id = $sta_id;
+    }
+
+    function getWarId() {
+        return $this->war_id;
+    }
+
+    function setWarId($war_id) {
+        $this->war_id = $war_id;
+    }
+
+    function getTrsId() {
+        return $this->trs_id;
+    }
+
+    function setTrsId($trs_id) {
+        $this->trs_id = $trs_id;
+    }
+
+    function getIncId() {
+        return $this->inc_id;
+    }
+
+    function setIncId($inc_id) {
+        $this->inc_id = $inc_id;
+    }
+
+    function getDiscount() {
+        return $this->discount;
+    }
+
+    function setDiscount($discount) {
+        $this->discount = $discount;
+    }
+
+    function getPrice() {
+        return $this->price;
+    }
+
+    function setPrice($price) {
+        $this->price = $price;
+    }
 
     function getId() {
         return $this->id;

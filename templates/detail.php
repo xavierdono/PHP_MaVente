@@ -18,14 +18,14 @@ $item = App\tables\Base::getItemByID($id);
             </div>
             <div class="details_big_box">
                 <div class="product_title_big"><?php echo $item->getName($lang) ?></div>
-                <div class="specifications">Available: <span class="blue">In stock</span><br />
-                    Warranties: <span class="blue">24 months</span><br />
-                    Transport: <span class="blue">delivery services company</span><br />
-                    Include :<span class="blue">TVA</span><br />
+                <div class="specifications">Available: <span class="blue"><?php echo $item->getStaId() ?></span><br />
+                    Warranties: <span class="blue"><?php echo $item->getWarId() ?></span><br />
+                    Transport: <span class="blue"><?php echo $item->getTrsId() ?></span><br />
+                    Include :<span class="blue"><?php echo $item->getIncId() ?></span><br />
                     Description :<span class="blue"><?php echo $item->getDesc($lang) ?></span><br />
                 </div>
-                <div class="prod_price_big"><span class="reduce">350$</span><span class="price">270$</span></div>
-                <a href="#" class="prod_buy">Add to cart</a> 
+                <div class="prod_price_big"><span class="reduce"><?php echo $item->getDiscount() ?></span><span class="price"><?php echo $item->getPrice() ?></span></div>
+                <a href="#" class="prod_buy">Add to cart</a>
             </div>
         </div>
     </div>
