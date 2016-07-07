@@ -76,4 +76,56 @@ class Base {
         return $items;
     }
 
+    public static function getItemOfTheMonth() {
+        $item = new Item();
+
+        $db = new DBConnection();
+
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = 0";
+        $results = $db->query($query);
+
+        $row = $results->fetchArray(SQLITE3_ASSOC);
+
+        if (count($row) > 0) {
+            $item->setId($row['items_id']);
+            $item->setName_en($row['items_name_en']);
+            $item->setName_fr($row['items_name_fr']);
+            $item->setDesc_en($row['items_desc_en']);
+            $item->setDesc_fr($row['items_desc_fr']);
+            $item->setEan($row['items_ean']);
+            $item->setManu_id($row['fk_manu_id']);
+            $item->setCat_id($row['fk_cat_id']);
+        }
+
+        $db->close();
+
+        return $item;
+    }
+
+    public static function getItemByID($id) {
+        $item = new Item();
+
+        $db = new DBConnection();
+
+        $query = "SELECT items_id, items_name_en, items_name_fr, items_desc_en, items_desc_fr, items_ean, fk_manu_id, fk_cat_id FROM items WHERE items_id = " . $id;
+        $results = $db->query($query);
+
+        $row = $results->fetchArray(SQLITE3_ASSOC);
+
+        if (count($row) > 0) {
+            $item->setId($row['items_id']);
+            $item->setName_en($row['items_name_en']);
+            $item->setName_fr($row['items_name_fr']);
+            $item->setDesc_en($row['items_desc_en']);
+            $item->setDesc_fr($row['items_desc_fr']);
+            $item->setEan($row['items_ean']);
+            $item->setManu_id($row['fk_manu_id']);
+            $item->setCat_id($row['fk_cat_id']);
+        }
+
+        $db->close();
+
+        return $item;
+    }
+
 }

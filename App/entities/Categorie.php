@@ -12,12 +12,12 @@ class Categorie {
         return $this->id;
     }
 
-    function getName_en() {
-        return $this->name_en;
-    }
-
-    function getName_fr() {
-        return $this->name_fr;
+    function getName($lang = 'fr') {
+        if($lang === 'fr') {
+            return $this->name_fr;
+        } else {
+            return $this->name_en;
+        }
     }
 
     function setId($id) {

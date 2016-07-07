@@ -32,17 +32,9 @@
                     include_once './templates/special_products.php';
                     ?>
                 </div>
-                <div class="center_content">
-                    <?php
-                    include_once './templates/item_of_the_month.php';
-                    ?>
-                    <?php
-                    include_once './templates/latest_products.php';
-                    ?>
-                    <?php
-                    include_once './templates/recomended_products.php';
-                    ?>
-                </div>
+                <?php
+                include_once './templates/detail.php';
+                ?>
                 <div class="right_content">
                     <div class="title_box">Search</div>
                     <div class="border_box">

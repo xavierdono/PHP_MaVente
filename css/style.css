@@ -71,6 +71,14 @@ ul.menu li {
     font-weight:bold;
     line-height:36px;
 }
+
+.floatleft {
+    float:left;
+}
+.floatright {
+    float:right;
+}
+
 ul.menu li.divider {
     display:inline;
     width:4px;

@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 class Item {
-    
+
     private $id;
     private $name_en;
     private $name_fr;
@@ -12,25 +12,25 @@ class Item {
     private $ean;
     private $manu_id;
     private $cat_id;
-    
+
     function getId() {
         return $this->id;
     }
 
-    function getName_en() {
-        return $this->name_en;
+    function getName($lang = 'fr') {
+        if ($lang === 'fr') {
+            return $this->name_fr;
+        } else {
+            return $this->name_en;
+        }
     }
 
-    function getName_fr() {
-        return $this->name_fr;
-    }
-
-    function getDesc_en() {
-        return $this->desc_en;
-    }
-
-    function getDesc_fr() {
-        return $this->desc_fr;
+    function getDesc($lang = 'fr') {
+        if ($lang === 'fr') {
+            return $this->desc_fr;
+        } else {
+            return $this->desc_en;
+        }
     }
 
     function getEan() {
@@ -75,5 +75,6 @@ class Item {
 
     function setCat_id($cat_id) {
         $this->cat_id = $cat_id;
-    }    
- }
+    }
+
+}
