@@ -24,7 +24,7 @@ $item = App\tables\Base::getItemByID($id);
                     Include :<span class="blue"><?php echo $item->getIncId() ?></span><br />
                     Description :<span class="blue"><?php echo $item->getDesc($lang) ?></span><br />
                 </div>
-                <div class="prod_price_big"><span class="reduce"><?php echo $item->getDiscount() ?></span><span class="price"><?php echo $item->getPrice() ?></span></div>
+                <div class="prod_price_big"><span class="reduce"><?php echo $item->getPrice() ?></span><span class="price"><?php echo $item->getPriceDiscount() ?></span></div>
                 <a href="#" class="prod_buy">Add to cart</a>
             </div>
         </div>

@@ -59,8 +59,12 @@ class Item {
         $this->discount = $discount;
     }
 
+    function getPriceDiscount() {
+        return round($this->price - ($this->price * $this->discount / 100), 2);
+    }
+
     function getPrice() {
-        return $this->price;
+        return round($this->price, 2);
     }
 
     function setPrice($price) {
@@ -73,9 +77,9 @@ class Item {
 
     function getName($lang = 'fr') {
         if ($lang === 'fr') {
-            return $this->name_fr;
+            return substr($this->name_fr, 0, 25);
         } else {
-            return $this->name_en;
+            return substr($this->name_en, 0, 25);
         }
     }
 
