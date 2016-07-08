@@ -49,11 +49,9 @@
                         <input type="text" name="search_input" class="newsletter_input" value="keyword"/>
                         <a href="#" class="join">Search</a>
                     </div>
-                    <div class="shopping_cart">
-                        <?php
-                        include_once './templates/shopping_card.php';
-                        ?>
-                    </div>
+                    <?php
+                    include_once './templates/shopping_card.php';
+                    ?>
                     <?php
                     include_once './templates/whats_new.php';
                     ?>
